@@ -1,0 +1,27 @@
+.terminal {
+    position: relative;
+    width: 100%;
+    border-radius: 6px;
+    padding-top: 45px;
+    margin-top: 8px;
+    overflow: hidden;
+    background-color: rgb(15, 15, 16);
+    color: greenyellow;
+    padding-left: 10px;
+    min-height: 300px;
+    box-shadow: 10px 10px 5px  lightgray;
+    font-size: 20px;
+    font-family :'Times New Roman', Times, serif;
+  }
+
+.text-success{
+    color:green;
+}
+
+.text-danger{
+    color:red;
+}
+
+.text-special{
+    font-style: italic;
+}

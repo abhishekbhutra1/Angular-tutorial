@@ -1,0 +1,78 @@
+<h1>Property Binding</h1>
+<hr>
+<!-- Implementing property binding -->
+<p [class] = "classtype">test works!</p>
+<!-- Property binding based on condition-->
+<p [class.text-danger] = "hasdanger">Smoke in the air</p>
+<!-- Implementing ngClass directive for multiple class effects -->
+<h2 [ngClass]="multipleClass"> Smoke in the air</h2>
+<br>
+
+<h1>Style Binding</h1>
+<hr>
+<!-- Style Binding -->
+<p [style.color]="hasdanger ? 'red' : 'orange'">Style Binding 1</p>
+<p [style.color]="styleBinding2Demo">Style Binding 2</p>
+<!-- Using ngStyle directive for multiple Style effect -->
+<p [ngStyle] = "multipleStyles">Style Binding 3</p>
+
+<h1>Implementing Interpolation</h1>
+<hr>
+
+<!-- Imlementing Interpolation -->
+<h3>{{greeting()+ " << " + (2+2) + " << " + name.toUpperCase() + " << " + name.length}}</h3>
+
+<h1>Event Binding</h1>
+<!-- Learning Event Binding -->
+<!-- Assigning Click event -->
+<button (click)="onClick($event)"> Greet</button>
+<br>
+
+<h1>Working with reference variables</h1>
+<hr>
+<!-- Template reference variables -->
+<input #myInput type="text"/>
+<button (click)="logMessage(myInput.value)"> Log value </button>
+<span>{{greetUser}}</span>
+<br>
+
+<h1> Two Way Binding </h1>
+<hr>
+<input [(ngModel)]="inputValue" type="text"/> 
+<span>{{inputValue}}</span>
+
+<h1>Structural Directives</h1>
+<hr>
+<!-- Ng-if -->
+<!-- basic method -->
+<h3 *ngIf="hasdanger">
+    Codeevolution
+</h3>
+<!-- Template Method -->
+<!-- If hasDanger is "true" then render thenBlock else render elseBlock -->
+<h2> ngIf Directive</h2>
+<div *ngIf = "hasdanger; then thenBlock; else elseBlock;"></div>
+<ng-template #thenBlock>
+    <span>Here we go</span>
+</ng-template>
+<ng-template #elseBlock>
+    <span>No Entry</span>
+</ng-template>
+
+<h2> ngSwitch Directive</h2>
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'">You Picked Red Color</div>
+    <div *ngSwitchCase="'blue'">You Picked Blue Color</div>
+    <div *ngSwitchCase="'yellow'">You Picked Yellow Color</div>
+</div>
+
+<h2> ngFor Directive</h2>
+<div *ngFor="let a of array">
+    <p>{{a}}</p>
+</div>
+
+<h1>Component Interaction</h1>
+<h2> from parent to child </h2>
+<span>{{"Hello " + parentData}}</span>
+<h2> from child to parent</h2>
+<button (click)="fireEvent()">Send Data</button>
